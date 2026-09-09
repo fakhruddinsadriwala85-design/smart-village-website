@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Village Smart City</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- ==============================
+     NAVBAR
+================================ -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🏙️
+        </div>
+
+        <div class="logo-text">
+            <strong>Smart Village</strong>
+            <span>Smart City</span>
+        </div>
+
+    </div>
+
+
+    <!-- Desktop Menu -->
+
+    <nav class="nav-menu">
+
+        <a href="index.html" class="active">
+            Home
+        </a>
+
+        <a href="services.html">
+            Citizen Services
+        </a>
+
+        <a href="complaints.html">
+            Complaints
+        </a>
+
+        <a href="awareness.html">
+            Digital Awareness
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <button class="search-btn" onclick="openSearch()">
+            🔍
+        </button>
+
+    </nav>
+
+
+    <!-- Mobile Menu Button -->
+
+    <button class="menu-btn"
+            onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- ==============================
+     MOBILE MENU
+================================ -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="services.html">
+        Citizen Services
+    </a>
+
+    <a href="complaints.html">
+        Complaints
+    </a>
+
+    <a href="awareness.html">
+        Digital Awareness
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+</div>
+
+
+
+<!-- ==============================
+     HERO SECTION
+================================ -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            IT ENABLEMENT FOR A BETTER TOMORROW
+        </span>
+
+        <h1>
+            Smart Village
+            <br>
+
+            <span>Smart City</span>
+        </h1>
+
+        <p>
+            Connecting people, services and technology
+            to build a smarter, cleaner and more
+            connected community.
+        </p>
+
+        <a href="services.html"
+           class="hero-btn">
+
+            Explore Services
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     QUICK SERVICES
+================================ -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Quick Services
+        </h2>
+
+        <p>
+            Access important community services quickly
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+        <!-- Government -->
+
+        <a href="services.html"
+           class="service-card">
+
+            <div class="service-icon blue">
+                🏛️
+            </div>
+
+            <h3>
+                Government
+                <br>
+                Services
+            </h3>
+
+        </a>
+
+
+        <!-- Water -->
+
+        <a href="services.html"
+           class="service-card">
+
+            <div class="service-icon cyan">
+                💧
+            </div>
+
+            <h3>
+                Water &
+                <br>
+                Electricity
+            </h3>
+
+        </a>
+
+
+        <!-- Education -->
+
+        <a href="services.html"
+           class="service-card">
+
+            <div class="service-icon yellow">
+                🎓
+            </div>
+
+            <h3>
+                Education
+            </h3>
+
+        </a>
+
+
+        <!-- Healthcare -->
+
+        <a href="services.html"
+           class="service-card">
+
+            <div class="service-icon red">
+                ❤️
+            </div>
+
+            <h3>
+                Healthcare
+            </h3>
+
+        </a>
+
+
+        <!-- Contacts -->
+
+        <a href="about.html"
+           class="service-card">
+
+            <div class="service-icon green">
+                📞
+            </div>
+
+            <h3>
+                Important
+                <br>
+                Contacts
+            </h3>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     EMERGENCY CONTACTS
+================================ -->
+
+<section class="emergency-section">
+
+    <div class="emergency-container">
+
+
+        <div class="emergency-heading">
+
+            <div class="emergency-icon">
+                🚨
+            </div>
+
+            <div>
+
+                <h2>
+                    Emergency Contacts
+                </h2>
+
+                <p>
+                    Important numbers for immediate assistance
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="emergency-grid">
+
+
+            <!-- Police -->
+
+            <div class="emergency-card">
+
+                <div class="emergency-card-icon">
+                    👮
+                </div>
+
+                <div>
+
+                    <h3>
+                        Police
+                    </h3>
+
+                    <strong>
+                        100
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Ambulance -->
+
+            <div class="emergency-card">
+
+                <div class="emergency-card-icon">
+                    🚑
+                </div>
+
+                <div>
+
+                    <h3>
+                        Ambulance
+                    </h3>
+
+                    <strong>
+                        108
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Fire -->
+
+            <div class="emergency-card">
+
+                <div class="emergency-card-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <h3>
+                        Fire Brigade
+                    </h3>
+
+                    <strong>
+                        101
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Disaster -->
+
+            <div class="emergency-card">
+
+                <div class="emergency-card-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Disaster Helpline
+                    </h3>
+
+                    <strong>
+                        1070
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     ABOUT PREVIEW
+================================ -->
+
+<section class="about-preview">
+
+    <div class="about-content">
+
+        <span>
+            SMART COMMUNITY
+        </span>
+
+        <h2>
+            Technology for a
+            <br>
+            Better Community
+        </h2>
+
+        <p>
+            Smart Village / Smart City IT Enablement
+            uses digital technology to make public
+            services easier to access, improve
+            communication and encourage digital
+            participation among citizens.
+        </p>
+
+        <a href="about.html"
+           class="outline-btn">
+
+            Learn More →
+
+        </a>
+
+    </div>
+
+
+    <div class="about-box">
+
+        <div class="about-box-icon">
+            💡
+        </div>
+
+        <h3>
+            Digital Today
+        </h3>
+
+        <p>
+            Better services, better communication
+            and better opportunities.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     FOOTER
+================================ -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <span>
+                    🏙️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Smart Village
+                    </strong>
+
+                    <strong>
+                        Smart City
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p>
+                Digital Today • Better Tomorrow
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Citizen Services
+            </a>
+
+            <a href="complaints.html">
+                Complaints
+            </a>
+
+            <a href="awareness.html">
+                Digital Awareness
+            </a>
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <h3>
+                Follow Us
+            </h3>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    f
+                </a>
+
+                <a href="#">
+                    X
+                </a>
+
+                <a href="#">
+                    ▶
+                </a>
+
+                <a href="#">
+                    ◎
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Smart Village Smart City.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- Search Popup -->
+
+<div class="search-popup"
+     id="searchPopup">
+
+    <div class="search-box">
+
+        <button onclick="closeSearch()">
+            ✕
+        </button>
+
+        <h2>
+            Search Website
+        </h2>
+
+        <input
+            type="text"
+            placeholder="Search services..."
+            id="searchInput">
+
+        <button class="search-submit"
+                onclick="performSearch()">
+
+            Search
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

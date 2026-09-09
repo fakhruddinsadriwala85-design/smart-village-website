@@ -1,0 +1,2522 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Awareness | Smart Village Smart City</title>
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f9fc;
+            color: #102a43;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            width: 100%;
+            height: 75px;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 2px 15px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+
+            background: #e8f7f2;
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 24px;
+        }
+
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1.1;
+        }
+
+
+        .logo-text strong {
+            color: #075985;
+            font-size: 15px;
+        }
+
+
+        .logo-text span {
+            color: #0f766e;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           DESKTOP NAV
+        ========================== */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+
+        .nav-menu a {
+            color: #334e68;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #087f5b;
+        }
+
+
+        .search-btn {
+            border: none;
+
+            background: transparent;
+
+            font-size: 18px;
+        }
+
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 28px;
+        }
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        .mobile-menu {
+            display: none;
+
+            position: fixed;
+
+            top: 75px;
+            left: 0;
+
+            width: 100%;
+
+            background: white;
+
+            padding: 15px 7%;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.1);
+
+            z-index: 999;
+        }
+
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+
+        .mobile-menu a {
+            display: block;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid #e6eef3;
+
+            color: #234;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .page-hero {
+
+            min-height: 300px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 55, 78, 0.80),
+                    rgba(0, 40, 60, 0.86)
+                ),
+
+                url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 50px 7%;
+        }
+
+
+        .hero-content {
+
+            color: white;
+
+            max-width: 750px;
+        }
+
+
+        .hero-icon {
+
+            width: 65px;
+            height: 65px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero-content h1 {
+
+            font-size:
+                clamp(35px, 5vw, 55px);
+
+            line-height: 1.1;
+
+            margin-bottom: 12px;
+        }
+
+
+        .hero-content p {
+
+            font-size: 17px;
+
+            color: #e2f8ff;
+
+            max-width: 650px;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================== */
+
+        .intro-section {
+
+            background: white;
+
+            padding: 65px 7%;
+        }
+
+
+        .intro-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .intro-container h2 {
+
+            font-size: 32px;
+
+            color: #102a43;
+
+            margin-bottom: 12px;
+        }
+
+
+        .intro-container p {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            color: #627d98;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           AWARENESS TOPICS
+        ========================== */
+
+        .topics-section {
+
+            padding: 70px 7%;
+
+            background: #f5f9fc;
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 40px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading p {
+
+            color: #627d98;
+
+            font-size: 15px;
+        }
+
+
+        .topics-grid {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .topic-card {
+
+            background: white;
+
+            border:
+                1px solid #e1ecf2;
+
+            border-radius: 15px;
+
+            padding: 30px 25px;
+
+            transition: 0.3s;
+        }
+
+
+        .topic-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.08);
+
+            border-color:
+                #b8e6d3;
+        }
+
+
+        .topic-icon {
+
+            width: 65px;
+            height: 65px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 30px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .blue {
+            background: #e0edff;
+        }
+
+
+        .green {
+            background: #ddf8e9;
+        }
+
+
+        .yellow {
+            background: #fff5c7;
+        }
+
+
+        .red {
+            background: #ffe2e5;
+        }
+
+
+        .purple {
+            background: #eee5ff;
+        }
+
+
+        .cyan {
+            background: #dff9ff;
+        }
+
+
+        .topic-card h3 {
+
+            color: #12344d;
+
+            font-size: 20px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .topic-card p {
+
+            color: #627d98;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .topic-list {
+
+            list-style: none;
+        }
+
+
+        .topic-list li {
+
+            color: #486581;
+
+            font-size: 13px;
+
+            padding: 4px 0;
+        }
+
+
+        .topic-list li::before {
+
+            content: "✓";
+
+            color: #087f5b;
+
+            font-weight: bold;
+
+            margin-right: 8px;
+        }
+
+
+        /* =========================
+           SAFETY SECTION
+        ========================== */
+
+        .safety-section {
+
+            padding: 70px 7%;
+
+            background: white;
+        }
+
+
+        .safety-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 35px;
+
+            align-items: center;
+        }
+
+
+        .safety-content h2 {
+
+            font-size: 31px;
+
+            color: #102a43;
+
+            margin-bottom: 12px;
+        }
+
+
+        .safety-content p {
+
+            color: #627d98;
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .safety-points {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .safety-point {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            padding: 13px;
+
+            background: #f5f9fc;
+
+            border-radius: 9px;
+        }
+
+
+        .safety-point-icon {
+
+            width: 35px;
+            height: 35px;
+
+            min-width: 35px;
+
+            background: #e8f7f2;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .safety-point h3 {
+
+            font-size: 15px;
+
+            color: #243b53;
+
+            margin-bottom: 2px;
+        }
+
+
+        .safety-point p {
+
+            font-size: 12px;
+
+            margin: 0;
+
+            color: #627d98;
+        }
+
+
+        .safety-image {
+
+            min-height: 380px;
+
+            border-radius: 18px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0, 55, 78, 0.15),
+                    rgba(0, 55, 78, 0.25)
+                ),
+
+                url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.10);
+        }
+
+
+        /* =========================
+           DIGITAL TIPS
+        ========================== */
+
+        .tips-section {
+
+            padding: 70px 7%;
+
+            background: #eaf6fb;
+        }
+
+
+        .tips-title {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .tips-title h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .tips-title p {
+
+            color: #627d98;
+        }
+
+
+        .tips-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .tip-card {
+
+            background: white;
+
+            padding: 25px 18px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            border:
+                1px solid #dcebf2;
+
+            transition: 0.3s;
+        }
+
+
+        .tip-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0, 0, 0, 0.08);
+        }
+
+
+        .tip-number {
+
+            width: 42px;
+            height: 42px;
+
+            background: #087f5b;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin:
+                0 auto 12px;
+
+            font-weight: bold;
+
+            font-size: 16px;
+        }
+
+
+        .tip-card h3 {
+
+            font-size: 15px;
+
+            color: #243b53;
+
+            margin-bottom: 5px;
+        }
+
+
+        .tip-card p {
+
+            font-size: 12px;
+
+            color: #627d98;
+        }
+
+
+        /* =========================
+           QUIZ
+        ========================== */
+
+        .quiz-section {
+
+            padding: 70px 7%;
+
+            background: white;
+        }
+
+
+        .quiz-container {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            background: #f8fbfd;
+
+            border:
+                1px solid #e1ecf2;
+
+            border-radius: 15px;
+
+            padding: 35px;
+        }
+
+
+        .quiz-container h2 {
+
+            text-align: center;
+
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .quiz-container > p {
+
+            text-align: center;
+
+            color: #627d98;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .question {
+
+            margin-bottom: 25px;
+        }
+
+
+        .question h3 {
+
+            font-size: 15px;
+
+            color: #243b53;
+
+            margin-bottom: 12px;
+        }
+
+
+        .option {
+
+            display: block;
+
+            padding: 10px 13px;
+
+            background: white;
+
+            border:
+                1px solid #d7e3e9;
+
+            border-radius: 7px;
+
+            margin-bottom: 8px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            color: #486581;
+
+            transition: 0.2s;
+        }
+
+
+        .option:hover {
+
+            border-color: #087f5b;
+
+            background: #f1fbf6;
+        }
+
+
+        .option input {
+
+            margin-right: 8px;
+        }
+
+
+        .quiz-btn {
+
+            width: 100%;
+
+            padding: 13px;
+
+            background: #087f5b;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            margin-top: 5px;
+        }
+
+
+        .quiz-result {
+
+            display: none;
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #e8f7f2;
+
+            border-radius: 8px;
+
+            text-align: center;
+
+            color: #075985;
+
+            font-weight: bold;
+        }
+
+
+        .quiz-result.show {
+
+            display: block;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+
+            background: #063b57;
+
+            color: white;
+
+            padding: 50px 7% 0;
+        }
+
+
+        .footer-container {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 40px;
+        }
+
+
+        .footer-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .footer-logo span {
+
+            font-size: 35px;
+        }
+
+
+        .footer-logo div {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1.2;
+        }
+
+
+        .footer-brand p {
+
+            margin-top: 15px;
+
+            color: #b5d4df;
+
+            font-size: 14px;
+        }
+
+
+        .footer h3 {
+
+            font-size: 16px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+
+        .footer-links a {
+
+            color: #c7e0e8;
+
+            font-size: 14px;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #7df0b5;
+        }
+
+
+        .social-icons {
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+
+        .social-icons a {
+
+            width: 35px;
+            height: 35px;
+
+            background: #0b587b;
+
+            border-radius: 6px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.15);
+
+            text-align: center;
+
+            padding: 18px 0;
+
+            color: #b5d4df;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           SEARCH POPUP
+        ========================== */
+
+        .search-popup {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.65);
+
+            z-index: 2000;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .search-popup.show {
+
+            display: flex;
+        }
+
+
+        .search-box {
+
+            width: 90%;
+
+            max-width: 500px;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            position: relative;
+        }
+
+
+        .close-search {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 12px;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 20px;
+        }
+
+
+        .search-box h2 {
+
+            margin-bottom: 20px;
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border:
+                1px solid #ccd9e0;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+
+        .search-submit {
+
+            width: 100%;
+
+            margin-top: 12px;
+
+            padding: 13px;
+
+            background: #087f5b;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .nav-menu {
+                gap: 14px;
+            }
+
+            .nav-menu a {
+                font-size: 12px;
+            }
+
+            .topics-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .tips-container {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                height: 68px;
+
+                padding: 0 5%;
+            }
+
+
+            .nav-menu {
+                display: none;
+            }
+
+
+            .menu-btn {
+                display: block;
+            }
+
+
+            .mobile-menu {
+                top: 68px;
+            }
+
+
+            .page-hero {
+
+                min-height: 360px;
+
+                padding: 50px 7%;
+            }
+
+
+            .hero-content h1 {
+
+                font-size: 38px;
+            }
+
+
+            .hero-content p {
+
+                font-size: 15px;
+            }
+
+
+            .intro-section {
+
+                padding: 50px 5%;
+            }
+
+
+            .intro-container h2 {
+
+                font-size: 27px;
+            }
+
+
+            .topics-section {
+
+                padding: 55px 5%;
+            }
+
+
+            .topics-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            .topic-card {
+
+                padding: 25px 20px;
+            }
+
+
+            .safety-section {
+
+                padding: 55px 5%;
+            }
+
+
+            .safety-container {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .safety-image {
+
+                min-height: 280px;
+
+                order: -1;
+            }
+
+
+            .tips-section {
+
+                padding: 55px 5%;
+            }
+
+
+            .tips-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+
+            .quiz-section {
+
+                padding: 55px 5%;
+            }
+
+
+            .quiz-container {
+
+                padding: 25px 20px;
+            }
+
+
+            .footer {
+
+                padding: 40px 5% 0;
+            }
+
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .tips-container {
+
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+
+                font-size: 34px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<header class="navbar">
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🏙️
+        </div>
+
+        <div class="logo-text">
+
+            <strong>
+                Smart Village
+            </strong>
+
+            <span>
+                Smart City
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-menu">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="services.html">
+            Citizen Services
+        </a>
+
+        <a href="complaints.html">
+            Complaints
+        </a>
+
+        <a href="awareness.html"
+           class="active">
+            Digital Awareness
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <button
+            class="search-btn"
+            onclick="openSearch()">
+
+            🔍
+
+        </button>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+====================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="services.html">
+        Citizen Services
+    </a>
+
+    <a href="complaints.html">
+        Complaints
+    </a>
+
+    <a href="awareness.html">
+        Digital Awareness
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="page-hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">
+            💻
+        </div>
+
+        <h1>
+            Digital Awareness
+        </h1>
+
+        <p>
+            Learn how to use digital services
+            safely, confidently and effectively
+            in your everyday life.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRODUCTION
+====================================================== -->
+
+<section class="intro-section">
+
+    <div class="intro-container">
+
+        <h2>
+            Building a Digitally Aware Community
+        </h2>
+
+        <p>
+            Digital technology can make community
+            services faster and more accessible.
+            Digital awareness helps citizens understand
+            how to use online services, protect their
+            personal information and make better use
+            of available technology.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     AWARENESS TOPICS
+====================================================== -->
+
+<section class="topics-section">
+
+
+    <div class="section-heading">
+
+        <h2>
+            Digital Awareness Topics
+        </h2>
+
+        <p>
+            Important areas that citizens should
+            understand before using digital services.
+        </p>
+
+    </div>
+
+
+    <div class="topics-grid">
+
+
+        <!-- DIGITAL PAYMENTS -->
+
+        <div class="topic-card">
+
+            <div class="topic-icon green">
+                💳
+            </div>
+
+            <h3>
+                Digital Payments
+            </h3>
+
+            <p>
+                Learn the basics of making digital
+                payments and checking transactions.
+            </p>
+
+            <ul class="topic-list">
+
+                <li>
+                    UPI payments
+                </li>
+
+                <li>
+                    QR code payments
+                </li>
+
+                <li>
+                    Check transaction details
+                </li>
+
+                <li>
+                    Never share your UPI PIN
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- ONLINE SERVICES -->
+
+        <div class="topic-card">
+
+            <div class="topic-icon blue">
+                🌐
+            </div>
+
+            <h3>
+                Online Services
+            </h3>
+
+            <p>
+                Understand how to access important
+                public and community services online.
+            </p>
+
+            <ul class="topic-list">
+
+                <li>
+                    Online applications
+                </li>
+
+                <li>
+                    Digital forms
+                </li>
+
+                <li>
+                    Service portals
+                </li>
+
+                <li>
+                    Download documents
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- CYBER SECURITY -->
+
+        <div class="topic-card">
+
+            <div class="topic-icon red">
+                🔐
+            </div>
+
+            <h3>
+                Cyber Security
+            </h3>
+
+            <p>
+                Protect your accounts and personal
+                information while using the internet.
+            </p>
+
+            <ul class="topic-list">
+
+                <li>
+                    Use strong passwords
+                </li>
+
+                <li>
+                    Enable security features
+                </li>
+
+                <li>
+                    Avoid suspicious links
+                </li>
+
+                <li>
+                    Report online fraud
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- DIGITAL DOCUMENTS -->
+
+        <div class="topic-card">
+
+            <div class="topic-icon yellow">
+                📄
+            </div>
+
+            <h3>
+                Digital Documents
+            </h3>
+
+            <p>
+                Learn how digital documents can be
+                stored and accessed when required.
+            </p>
+
+            <ul class="topic-list">
+
+                <li>
+                    Store documents safely
+                </li>
+
+                <li>
+                    Scan important papers
+                </li>
+
+                <li>
+                    Use digital copies
+                </li>
+
+                <li>
+                    Keep backups
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- SMARTPHONE -->
+
+        <div class="topic-card">
+
+            <div class="topic-icon purple">
+                📱
+            </div>
+
+            <h3>
+                Smartphone Skills
+            </h3>
+
+            <p>
+                Develop basic smartphone skills for
+                communication and digital services.
+            </p>
+
+            <ul class="topic-list">
+
+                <li>
+                    Install trusted apps
+                </li>
+
+                <li>
+                    Manage settings
+                </li>
+
+                <li>
+                    Use internet services
+                </li>
+
+                <li>
+                    Update applications
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- INFORMATION -->
+
+        <div class="topic-card">
+
+            <div class="topic-icon cyan">
+                📰
+            </div>
+
+            <h3>
+                Digital Information
+            </h3>
+
+            <p>
+                Learn how to identify reliable
+                information available online.
+            </p>
+
+            <ul class="topic-list">
+
+                <li>
+                    Check information sources
+                </li>
+
+                <li>
+                    Avoid fake news
+                </li>
+
+                <li>
+                    Verify important information
+                </li>
+
+                <li>
+                    Think before sharing
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CYBER SAFETY
+====================================================== -->
+
+<section class="safety-section">
+
+
+    <div class="safety-container">
+
+
+        <div class="safety-content">
+
+            <h2>
+                Stay Safe Online
+            </h2>
+
+            <p>
+                A digitally enabled community also
+                needs digital safety. Follow these
+                simple practices whenever you use
+                online services.
+            </p>
+
+
+            <div class="safety-points">
+
+
+                <div class="safety-point">
+
+                    <div class="safety-point-icon">
+                        🔑
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Protect Your Passwords
+                        </h3>
+
+                        <p>
+                            Do not share passwords or
+                            PINs with anyone.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-point">
+
+                    <div class="safety-point-icon">
+                        📩
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Be Careful With Messages
+                        </h3>
+
+                        <p>
+                            Avoid clicking unknown links
+                            or suspicious attachments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-point">
+
+                    <div class="safety-point-icon">
+                        📱
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Keep Devices Updated
+                        </h3>
+
+                        <p>
+                            Install updates from trusted
+                            sources regularly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-point">
+
+                    <div class="safety-point-icon">
+                        🛡️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Protect Personal Information
+                        </h3>
+
+                        <p>
+                            Share personal information only
+                            with trusted services.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="safety-image">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DIGITAL TIPS
+====================================================== -->
+
+<section class="tips-section">
+
+
+    <div class="tips-title">
+
+        <h2>
+            4 Simple Digital Habits
+        </h2>
+
+        <p>
+            Small habits can make digital services
+            safer and easier to use.
+        </p>
+
+    </div>
+
+
+    <div class="tips-container">
+
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                1
+            </div>
+
+            <h3>
+                Verify
+            </h3>
+
+            <p>
+                Check information before
+                trusting or sharing it.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                2
+            </div>
+
+            <h3>
+                Protect
+            </h3>
+
+            <p>
+                Keep passwords, PINs and
+                personal details private.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                3
+            </div>
+
+            <h3>
+                Update
+            </h3>
+
+            <p>
+                Keep your device and apps
+                updated regularly.
+            </p>
+
+        </div>
+
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                4
+            </div>
+
+            <h3>
+                Ask
+            </h3>
+
+            <p>
+                Ask a trusted person when
+                you are unsure about something.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DIGITAL AWARENESS QUIZ
+====================================================== -->
+
+<section class="quiz-section">
+
+
+    <div class="quiz-container">
+
+        <h2>
+            Quick Digital Safety Quiz
+        </h2>
+
+        <p>
+            Test your basic digital awareness.
+        </p>
+
+
+        <form id="quizForm">
+
+
+            <!-- QUESTION 1 -->
+
+            <div class="question">
+
+                <h3>
+                    1. Should you share your UPI PIN with another person?
+                </h3>
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="wrong">
+
+                    Yes
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q1"
+                        value="correct">
+
+                    No
+
+                </label>
+
+            </div>
+
+
+
+            <!-- QUESTION 2 -->
+
+            <div class="question">
+
+                <h3>
+                    2. What should you do before opening an unknown link?
+                </h3>
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="wrong">
+
+                    Open it immediately
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q2"
+                        value="correct">
+
+                    Verify the source first
+
+                </label>
+
+            </div>
+
+
+
+            <!-- QUESTION 3 -->
+
+            <div class="question">
+
+                <h3>
+                    3. Is it important to keep applications updated?
+                </h3>
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="correct">
+
+                    Yes
+
+                </label>
+
+
+                <label class="option">
+
+                    <input
+                        type="radio"
+                        name="q3"
+                        value="wrong">
+
+                    No
+
+                </label>
+
+            </div>
+
+
+
+            <button
+                type="button"
+                class="quiz-btn"
+                onclick="checkQuiz()">
+
+                Check My Score
+
+            </button>
+
+
+        </form>
+
+
+        <div
+            class="quiz-result"
+            id="quizResult">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <span>
+                    🏙️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Smart Village
+                    </strong>
+
+                    <strong>
+                        Smart City
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p>
+                Digital Today • Better Tomorrow
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Citizen Services
+            </a>
+
+            <a href="complaints.html">
+                Complaints
+            </a>
+
+            <a href="awareness.html">
+                Digital Awareness
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Follow Us
+            </h3>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    f
+                </a>
+
+                <a href="#">
+                    X
+                </a>
+
+                <a href="#">
+                    ▶
+                </a>
+
+                <a href="#">
+                    ◎
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Smart Village Smart City.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SEARCH POPUP
+====================================================== -->
+
+<div
+    class="search-popup"
+    id="searchPopup">
+
+    <div class="search-box">
+
+        <button
+            class="close-search"
+            onclick="closeSearch()">
+
+            ✕
+
+        </button>
+
+        <h2>
+            Search Website
+        </h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search...">
+
+        <button
+            class="search-submit"
+            onclick="performSearch()">
+
+            Search
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("mobileMenu");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    function openSearch() {
+
+        document
+            .getElementById("searchPopup")
+            .classList.add("show");
+
+        document
+            .getElementById("searchInput")
+            .focus();
+
+    }
+
+
+    function closeSearch() {
+
+        document
+            .getElementById("searchPopup")
+            .classList.remove("show");
+
+    }
+
+
+    function performSearch() {
+
+        const value =
+            document
+                .getElementById("searchInput")
+                .value
+                .trim();
+
+
+        if (value === "") {
+
+            alert(
+                "Please enter something to search."
+            );
+
+            return;
+
+        }
+
+
+        alert(
+            "Searching for: " + value
+        );
+
+    }
+
+
+
+    /* =========================
+       DIGITAL SAFETY QUIZ
+    ========================== */
+
+    function checkQuiz() {
+
+        let score = 0;
+
+
+        const q1 =
+            document.querySelector(
+                'input[name="q1"]:checked'
+            );
+
+
+        const q2 =
+            document.querySelector(
+                'input[name="q2"]:checked'
+            );
+
+
+        const q3 =
+            document.querySelector(
+                'input[name="q3"]:checked'
+            );
+
+
+        if (!q1 || !q2 || !q3) {
+
+            alert(
+                "Please answer all questions."
+            );
+
+            return;
+
+        }
+
+
+        if (q1.value === "correct") {
+            score++;
+        }
+
+
+        if (q2.value === "correct") {
+            score++;
+        }
+
+
+        if (q3.value === "correct") {
+            score++;
+        }
+
+
+        const result =
+            document.getElementById(
+                "quizResult"
+            );
+
+
+        result.classList.add("show");
+
+
+        if (score === 3) {
+
+            result.innerHTML =
+                "Excellent! 🎉 You scored 3/3. You have good digital safety awareness.";
+
+        }
+
+        else if (score === 2) {
+
+            result.innerHTML =
+                "Good job! 👍 You scored 2/3. Keep learning about digital safety.";
+
+        }
+
+        else {
+
+            result.innerHTML =
+                "You scored " +
+                score +
+                "/3. Keep learning and stay safe online.";
+
+        }
+
+    }
+
+
+
+    /* =========================
+       CLOSE SEARCH OUTSIDE
+    ========================== */
+
+    document.addEventListener(
+        "click",
+        function(event) {
+
+            const popup =
+                document.getElementById(
+                    "searchPopup"
+                );
+
+            if (event.target === popup) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+
+</script>
+
+</body>
+
+</html>
+```

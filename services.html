@@ -1,0 +1,2170 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Citizen Services | Smart Village Smart City</title>
+
+
+    <!-- =====================================================
+         CSS START
+    ====================================================== -->
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f9fc;
+            color: #102a43;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            width: 100%;
+            height: 75px;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow:
+                0 2px 15px rgba(0,0,0,0.08);
+        }
+
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+
+            background: #e8f7f2;
+
+            border-radius: 12px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1.1;
+        }
+
+        .logo-text strong {
+            color: #075985;
+            font-size: 15px;
+        }
+
+        .logo-text span {
+            color: #0f766e;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+
+        /* NAVIGATION */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-menu a {
+            color: #334e68;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #087f5b;
+        }
+
+        .search-btn {
+            border: none;
+            background: transparent;
+
+            font-size: 18px;
+        }
+
+
+        /* MOBILE BUTTON */
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 28px;
+        }
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        .mobile-menu {
+            display: none;
+
+            background: white;
+
+            padding: 15px 7%;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.1);
+
+            position: fixed;
+
+            top: 75px;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 999;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid #e6eef3;
+
+            font-weight: 600;
+
+            color: #234;
+        }
+
+
+        /* =========================
+           PAGE HERO
+        ========================== */
+
+        .page-hero {
+
+            min-height: 270px;
+
+            background:
+
+                linear-gradient(
+                    rgba(0,70,90,0.78),
+                    rgba(0,48,70,0.82)
+                ),
+
+                url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 50px 7%;
+        }
+
+
+        .page-hero-content {
+            color: white;
+
+            max-width: 700px;
+        }
+
+
+        .page-icon {
+
+            width: 65px;
+            height: 65px;
+
+            background: rgba(255,255,255,0.95);
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 32px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .page-hero h1 {
+
+            font-size:
+                clamp(35px, 5vw, 55px);
+
+            line-height: 1.1;
+
+            margin-bottom: 10px;
+        }
+
+
+        .page-hero p {
+
+            font-size: 17px;
+
+            color: #e4f8ff;
+
+            max-width: 600px;
+        }
+
+
+        /* =========================
+           SERVICES SECTION
+        ========================== */
+
+        .services-section {
+
+            padding: 70px 7%;
+
+            background: white;
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 40px;
+        }
+
+
+        .section-heading h2 {
+
+            font-size: 32px;
+
+            color: #102a43;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-heading p {
+
+            color: #627d98;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           SERVICE CARDS
+        ========================== */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .service-card {
+
+            background: #f8fbfd;
+
+            border:
+                1px solid #e1ecf2;
+
+            border-radius: 15px;
+
+            padding: 30px 25px;
+
+            min-height: 260px;
+
+            transition: 0.3s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .service-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0,0,0,0.09);
+
+            border-color:
+                #b8e6d3;
+        }
+
+
+        .service-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .blue {
+            background: #e0edff;
+        }
+
+        .cyan {
+            background: #dff9ff;
+        }
+
+        .yellow {
+            background: #fff5c7;
+        }
+
+        .red {
+            background: #ffe2e5;
+        }
+
+        .green {
+            background: #ddf8e9;
+        }
+
+        .purple {
+            background: #eee5ff;
+        }
+
+
+        .service-card h3 {
+
+            font-size: 21px;
+
+            color: #12344d;
+
+            margin-bottom: 10px;
+        }
+
+
+        .service-card p {
+
+            color: #627d98;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .service-list {
+
+            list-style: none;
+
+            margin-bottom: 20px;
+        }
+
+
+        .service-list li {
+
+            color: #486581;
+
+            font-size: 13px;
+
+            padding: 4px 0;
+        }
+
+
+        .service-list li::before {
+
+            content: "✓";
+
+            color: #087f5b;
+
+            font-weight: bold;
+
+            margin-right: 8px;
+        }
+
+
+        .learn-btn {
+
+            display: inline-block;
+
+            background: #087f5b;
+
+            color: white;
+
+            padding: 9px 17px;
+
+            border-radius: 6px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            border: none;
+
+            transition: 0.3s;
+        }
+
+
+        .learn-btn:hover {
+
+            background: #065f46;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           IMPORTANT SERVICES
+        ========================== */
+
+        .important-section {
+
+            padding: 65px 7%;
+
+            background: #eaf6fb;
+        }
+
+
+        .important-section h2 {
+
+            text-align: center;
+
+            font-size: 30px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .important-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .important-card {
+
+            background: white;
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            border:
+                1px solid #dcebf2;
+
+            transition: 0.3s;
+        }
+
+
+        .important-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,.08);
+        }
+
+
+        .important-card-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .important-card h3 {
+
+            font-size: 16px;
+
+            color: #243b53;
+
+            margin-bottom: 5px;
+        }
+
+
+        .important-card p {
+
+            color: #627d98;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CALL TO ACTION
+        ========================== */
+
+        .cta {
+
+            padding: 65px 7%;
+
+            background: white;
+        }
+
+
+        .cta-box {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dff8ee,
+                    #e5f5ff
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .cta-box h2 {
+
+            font-size: 28px;
+
+            color: #075985;
+
+            margin-bottom: 8px;
+        }
+
+
+        .cta-box p {
+
+            color: #527080;
+
+            max-width: 650px;
+        }
+
+
+        .complaint-btn {
+
+            white-space: nowrap;
+
+            background: #087f5b;
+
+            color: white;
+
+            padding: 13px 22px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .complaint-btn:hover {
+
+            background: #065f46;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+
+            background: #063b57;
+
+            color: white;
+
+            padding: 50px 7% 0;
+        }
+
+
+        .footer-container {
+
+            display: grid;
+
+            grid-template-columns:
+                2fr 1fr 1fr;
+
+            gap: 50px;
+
+            padding-bottom: 40px;
+        }
+
+
+        .footer-logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .footer-logo span {
+
+            font-size: 35px;
+        }
+
+
+        .footer-logo div {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1.2;
+        }
+
+
+        .footer-brand p {
+
+            margin-top: 15px;
+
+            color: #b5d4df;
+
+            font-size: 14px;
+        }
+
+
+        .footer h3 {
+
+            margin-bottom: 15px;
+
+            font-size: 16px;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+
+        .footer-links a {
+
+            color: #c7e0e8;
+
+            font-size: 14px;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #7df0b5;
+        }
+
+
+        .social-icons {
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+
+        .social-icons a {
+
+            width: 35px;
+
+            height: 35px;
+
+            background: #0b587b;
+
+            border-radius: 6px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+        }
+
+
+        .footer-bottom {
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.15);
+
+            text-align: center;
+
+            padding: 18px 0;
+
+            color: #b5d4df;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           SEARCH POPUP
+        ========================== */
+
+        .search-popup {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.65);
+
+            z-index: 2000;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .search-popup.show {
+
+            display: flex;
+        }
+
+
+        .search-box {
+
+            width: 90%;
+
+            max-width: 500px;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            position: relative;
+        }
+
+
+        .close-search {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 15px;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 20px;
+        }
+
+
+        .search-box h2 {
+
+            margin-bottom: 20px;
+        }
+
+
+        .search-box input {
+
+            width: 100%;
+
+            padding: 13px;
+
+            border:
+                1px solid #ccd9e0;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 15px;
+        }
+
+
+        .search-submit {
+
+            width: 100%;
+
+            margin-top: 12px;
+
+            padding: 13px;
+
+            background: #087f5b;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================== */
+
+        @media (max-width: 1000px) {
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .nav-menu a {
+                font-size: 12px;
+            }
+
+            .services-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .important-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                height: 68px;
+
+                padding: 0 5%;
+            }
+
+
+            .nav-menu {
+                display: none;
+            }
+
+
+            .menu-btn {
+                display: block;
+            }
+
+
+            .mobile-menu {
+                top: 68px;
+            }
+
+
+            .page-hero {
+
+                min-height: 350px;
+
+                padding:
+                    50px 7%;
+            }
+
+
+            .page-hero h1 {
+
+                font-size: 38px;
+            }
+
+
+            .page-hero p {
+
+                font-size: 15px;
+            }
+
+
+            .services-section {
+
+                padding:
+                    55px 5%;
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 26px;
+            }
+
+
+            .services-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+
+            .service-card {
+
+                min-height: auto;
+
+                padding: 25px 20px;
+            }
+
+
+            .important-section {
+
+                padding:
+                    50px 5%;
+            }
+
+
+            .important-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 12px;
+            }
+
+
+            .cta {
+
+                padding:
+                    50px 5%;
+            }
+
+
+            .cta-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 30px 25px;
+            }
+
+
+            .footer {
+
+                padding:
+                    40px 5% 0;
+            }
+
+
+            .footer-container {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================== */
+
+        @media (max-width: 400px) {
+
+            .important-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+
+                font-size: 34px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<header class="navbar">
+
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🏙️
+        </div>
+
+        <div class="logo-text">
+
+            <strong>
+                Smart Village
+            </strong>
+
+            <span>
+                Smart City
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <nav class="nav-menu">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="services.html"
+           class="active">
+            Citizen Services
+        </a>
+
+        <a href="complaints.html">
+            Complaints
+        </a>
+
+        <a href="awareness.html">
+            Digital Awareness
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <button
+            class="search-btn"
+            onclick="openSearch()">
+
+            🔍
+
+        </button>
+
+    </nav>
+
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+====================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="services.html">
+        Citizen Services
+    </a>
+
+    <a href="complaints.html">
+        Complaints
+    </a>
+
+    <a href="awareness.html">
+        Digital Awareness
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     PAGE HERO
+====================================================== -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <div class="page-icon">
+            🏠
+        </div>
+
+        <h1>
+            Citizen Services
+        </h1>
+
+        <p>
+            Access essential community services
+            easily and digitally. Save time, stay
+            informed, and get the support you need.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+====================================================== -->
+
+<section class="services-section">
+
+
+    <div class="section-heading">
+
+        <h2>
+            Essential Services
+        </h2>
+
+        <p>
+            Explore digital services available
+            for citizens and the community.
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <!-- GOVERNMENT -->
+
+        <div class="service-card">
+
+            <div class="service-icon blue">
+                🏛️
+            </div>
+
+            <h3>
+                Government Services
+            </h3>
+
+            <p>
+                Access important public and
+                government-related services.
+            </p>
+
+            <ul class="service-list">
+
+                <li>
+                    Certificates
+                </li>
+
+                <li>
+                    Government Schemes
+                </li>
+
+                <li>
+                    Public Documents
+                </li>
+
+            </ul>
+
+            <button
+                class="learn-btn"
+                onclick="showMessage('Government Services')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- WATER -->
+
+        <div class="service-card">
+
+            <div class="service-icon cyan">
+                💧
+            </div>
+
+            <h3>
+                Water & Electricity
+            </h3>
+
+            <p>
+                Get information about water
+                supply and electricity services.
+            </p>
+
+            <ul class="service-list">
+
+                <li>
+                    Water Supply
+                </li>
+
+                <li>
+                    Electricity
+                </li>
+
+                <li>
+                    Bill Information
+                </li>
+
+            </ul>
+
+            <button
+                class="learn-btn"
+                onclick="showMessage('Water & Electricity')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- EDUCATION -->
+
+        <div class="service-card">
+
+            <div class="service-icon yellow">
+                🎓
+            </div>
+
+            <h3>
+                Education
+            </h3>
+
+            <p>
+                Find useful educational information
+                and learning opportunities.
+            </p>
+
+            <ul class="service-list">
+
+                <li>
+                    Schools
+                </li>
+
+                <li>
+                    Scholarships
+                </li>
+
+                <li>
+                    Digital Learning
+                </li>
+
+            </ul>
+
+            <button
+                class="learn-btn"
+                onclick="showMessage('Education Services')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- HEALTHCARE -->
+
+        <div class="service-card">
+
+            <div class="service-icon red">
+                ❤️
+            </div>
+
+            <h3>
+                Healthcare
+            </h3>
+
+            <p>
+                Access information about
+                healthcare facilities.
+            </p>
+
+            <ul class="service-list">
+
+                <li>
+                    Hospitals
+                </li>
+
+                <li>
+                    Clinics
+                </li>
+
+                <li>
+                    Health Information
+                </li>
+
+            </ul>
+
+            <button
+                class="learn-btn"
+                onclick="showMessage('Healthcare Services')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- AGRICULTURE -->
+
+        <div class="service-card">
+
+            <div class="service-icon green">
+                🌱
+            </div>
+
+            <h3>
+                Agriculture
+            </h3>
+
+            <p>
+                Useful information and support
+                for farmers and agriculture.
+            </p>
+
+            <ul class="service-list">
+
+                <li>
+                    Farming Support
+                </li>
+
+                <li>
+                    Government Schemes
+                </li>
+
+                <li>
+                    Crop Information
+                </li>
+
+            </ul>
+
+            <button
+                class="learn-btn"
+                onclick="showMessage('Agriculture Services')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- EMPLOYMENT -->
+
+        <div class="service-card">
+
+            <div class="service-icon purple">
+                💼
+            </div>
+
+            <h3>
+                Employment
+            </h3>
+
+            <p>
+                Discover employment opportunities
+                and skill development programs.
+            </p>
+
+            <ul class="service-list">
+
+                <li>
+                    Job Opportunities
+                </li>
+
+                <li>
+                    Skill Training
+                </li>
+
+                <li>
+                    Career Information
+                </li>
+
+            </ul>
+
+            <button
+                class="learn-btn"
+                onclick="showMessage('Employment Services')">
+
+                Learn More →
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IMPORTANT CONTACTS
+====================================================== -->
+
+<section class="important-section">
+
+    <h2>
+        Important Services & Contacts
+    </h2>
+
+
+    <div class="important-grid">
+
+
+        <div class="important-card">
+
+            <div class="important-card-icon">
+                👮
+            </div>
+
+            <h3>
+                Police
+            </h3>
+
+            <p>
+                Emergency: 100
+            </p>
+
+        </div>
+
+
+        <div class="important-card">
+
+            <div class="important-card-icon">
+                🚑
+            </div>
+
+            <h3>
+                Ambulance
+            </h3>
+
+            <p>
+                Emergency: 108
+            </p>
+
+        </div>
+
+
+        <div class="important-card">
+
+            <div class="important-card-icon">
+                🔥
+            </div>
+
+            <h3>
+                Fire Brigade
+            </h3>
+
+            <p>
+                Emergency: 101
+            </p>
+
+        </div>
+
+
+        <div class="important-card">
+
+            <div class="important-card-icon">
+                ⚠️
+            </div>
+
+            <h3>
+                Disaster Helpline
+            </h3>
+
+            <p>
+                Helpline: 1070
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+
+<section class="cta">
+
+    <div class="cta-box">
+
+        <div>
+
+            <h2>
+                Need Help or Want to Report an Issue?
+            </h2>
+
+            <p>
+                Citizens can submit complaints,
+                provide feedback and communicate
+                their concerns digitally.
+            </p>
+
+        </div>
+
+
+        <a
+            href="complaints.html"
+            class="complaint-btn">
+
+            Submit a Complaint →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <span>
+                    🏙️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Smart Village
+                    </strong>
+
+                    <strong>
+                        Smart City
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <p>
+                Digital Today • Better Tomorrow
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Citizen Services
+            </a>
+
+            <a href="complaints.html">
+                Complaints
+            </a>
+
+            <a href="awareness.html">
+                Digital Awareness
+            </a>
+
+        </div>
+
+
+        <div class="footer-social">
+
+            <h3>
+                Follow Us
+            </h3>
+
+            <div class="social-icons">
+
+                <a href="#">
+                    f
+                </a>
+
+                <a href="#">
+                    X
+                </a>
+
+                <a href="#">
+                    ▶
+                </a>
+
+                <a href="#">
+                    ◎
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Smart Village Smart City.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     SEARCH POPUP
+====================================================== -->
+
+<div
+    class="search-popup"
+    id="searchPopup">
+
+    <div class="search-box">
+
+        <button
+            class="close-search"
+            onclick="closeSearch()">
+
+            ✕
+
+        </button>
+
+        <h2>
+            Search Website
+        </h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search services...">
+
+        <button
+            class="search-submit"
+            onclick="performSearch()">
+
+            Search
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT START
+====================================================== -->
+
+<script>
+
+
+    /* =========================
+       MOBILE MENU
+    ========================== */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("mobileMenu");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+
+    /* =========================
+       SEARCH OPEN
+    ========================== */
+
+    function openSearch() {
+
+        const popup =
+            document.getElementById("searchPopup");
+
+        popup.classList.add("show");
+
+        document
+            .getElementById("searchInput")
+            .focus();
+
+    }
+
+
+
+    /* =========================
+       SEARCH CLOSE
+    ========================== */
+
+    function closeSearch() {
+
+        document
+            .getElementById("searchPopup")
+            .classList.remove("show");
+
+    }
+
+
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    function performSearch() {
+
+        const input =
+            document.getElementById("searchInput");
+
+        const value =
+            input.value.trim().toLowerCase();
+
+
+        if (value === "") {
+
+            alert(
+                "Please enter a service name."
+            );
+
+            return;
+
+        }
+
+
+        if (
+            value.includes("water") ||
+            value.includes("electricity")
+        ) {
+
+            alert(
+                "Water & Electricity service found."
+            );
+
+        }
+
+        else if (
+            value.includes("education") ||
+            value.includes("school")
+        ) {
+
+            alert(
+                "Education service found."
+            );
+
+        }
+
+        else if (
+            value.includes("health") ||
+            value.includes("hospital")
+        ) {
+
+            alert(
+                "Healthcare service found."
+            );
+
+        }
+
+        else {
+
+            alert(
+                "Service information will be available soon."
+            );
+
+        }
+
+    }
+
+
+
+    /* =========================
+       SERVICE MESSAGE
+    ========================== */
+
+    function showMessage(serviceName) {
+
+    let icon = "📋";
+    let description = "";
+    let features = [];
+
+    if (serviceName.includes("Government")) {
+
+        icon = "🏛️";
+        description = "Access important government services digitally with simple and convenient online guidance.";
+        features = [
+            "Online Government Forms",
+            "Certificate & Document Services",
+            "Government Scheme Information",
+            "Application Guidance"
+        ];
+
+    } else if (serviceName.includes("Water")) {
+
+        icon = "💧";
+        description = "Get useful information and support related to essential water and electricity services.";
+        features = [
+            "Water Supply Information",
+            "Electricity Service Information",
+            "Report Water Leakage",
+            "Report Power Issues"
+        ];
+
+    } else if (serviceName.includes("Education")) {
+
+        icon = "🎓";
+        description = "Explore digital education resources and information to support students and learners.";
+        features = [
+            "Digital Learning Resources",
+            "Scholarship Information",
+            "Online Educational Services",
+            "Student Guidance"
+        ];
+
+    } else if (serviceName.includes("Healthcare")) {
+
+        icon = "🏥";
+        description = "Find important healthcare information and digital resources for the community.";
+        features = [
+            "Health Service Information",
+            "Healthcare Guidance",
+            "Health Awareness Resources",
+            "Emergency Information"
+        ];
+
+    } else if (serviceName.includes("Agriculture")) {
+
+        icon = "🌾";
+        description = "Access useful digital information and resources to support farmers and agricultural activities.";
+        features = [
+            "Farming Information",
+            "Weather & Crop Updates",
+            "Agriculture Government Schemes",
+            "Farmer Support Information"
+        ];
+
+    } else if (serviceName.includes("Employment")) {
+
+        icon = "💼";
+        description = "Discover employment resources, skill development opportunities and career guidance.";
+        features = [
+            "Job Opportunities",
+            "Skill Development Programs",
+            "Career Guidance",
+            "Employment Scheme Information"
+        ];
+    }
+
+    const popup = document.createElement("div");
+
+    popup.className = "popup-wrapper";
+
+    popup.innerHTML = `
+        <div style="
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.65);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:99999;
+            padding:20px;
+        ">
+
+            <div style="
+                background:white;
+                width:100%;
+                max-width:550px;
+                border-radius:18px;
+                padding:35px;
+                position:relative;
+                box-shadow:0 20px 60px rgba(0,0,0,0.3);
+                font-family:Arial,sans-serif;
+            ">
+
+                <button onclick="this.closest('.popup-wrapper').remove()" style="
+                    position:absolute;
+                    right:18px;
+                    top:15px;
+                    border:none;
+                    background:#f1f1f1;
+                    width:35px;
+                    height:35px;
+                    border-radius:50%;
+                    font-size:22px;
+                    cursor:pointer;
+                ">×</button>
+
+                <div style="
+                    font-size:45px;
+                    margin-bottom:10px;
+                ">
+                    ${icon}
+                </div>
+
+                <h2 style="
+                    margin:0 0 12px;
+                    color:#1e3a8a;
+                    font-size:28px;
+                ">
+                    ${serviceName}
+                </h2>
+
+                <p style="
+                    color:#555;
+                    line-height:1.7;
+                    font-size:16px;
+                    margin-bottom:20px;
+                ">
+                    ${description}
+                </p>
+
+                <h3 style="
+                    color:#222;
+                    margin-bottom:10px;
+                ">
+                    Available Services
+                </h3>
+
+                <ul style="
+                    padding-left:20px;
+                    color:#444;
+                    line-height:2;
+                    margin-bottom:25px;
+                ">
+                    ${features.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+
+                <button onclick="this.closest('.popup-wrapper').remove()" style="
+                    width:100%;
+                    padding:13px;
+                    border:none;
+                    border-radius:10px;
+                    background:#1e3a8a;
+                    color:white;
+                    font-size:16px;
+                    font-weight:bold;
+                    cursor:pointer;
+                ">
+                    Close
+                </button>
+
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(popup);
+
+    popup.addEventListener("click", function(e) {
+        if (e.target === popup) {
+            popup.remove();
+        }
+    });
+}
+
+
+
+    /* =========================
+       CLOSE SEARCH OUTSIDE
+    ========================== */
+
+    document.addEventListener(
+        "click",
+        function(event) {
+
+            const popup =
+                document.getElementById(
+                    "searchPopup"
+                );
+
+            if (
+                event.target === popup
+            ) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       MOBILE LINK CLOSE
+    ========================== */
+
+    document
+        .querySelectorAll(
+            ".mobile-menu a"
+        )
+        .forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .getElementById(
+                            "mobileMenu"
+                        )
+                        .classList.remove(
+                            "show"
+                        );
+
+                }
+            );
+
+        });
+
+
+</script>
+
+</body>
+
+</html>
+```
